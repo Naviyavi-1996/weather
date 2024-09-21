@@ -46,6 +46,7 @@
                 
             
             </div>
+           
     </div>
 
 </body>
@@ -91,7 +92,8 @@
                             <td>${response.main.pressure}</td>
                         </tr>
                     </tbody>
-                </table>`
+                </table>
+                <button class ="btn btn-success ms-3"onclick=refresh()>Clear</button>`
                 const contain=document.getElementById('container')
                 if(response.weather[0].main=='Mist')
                 {
@@ -101,7 +103,7 @@
                     contain.style.backgroundSize='cover'
 
                 }
-                else if(response.weather[0].main=='Cloudy')
+                else if(response.weather[0].main=='Clouds')
                 {
                     contain.style.backgroundImage='url(https://st5.depositphotos.com/37603430/69421/i/450/depositphotos_694210848-stock-photo-strangely-shaped-white-clouds-blue.jpg)'
                     contain.style.backgroundRepeat='no-repeat'
@@ -129,17 +131,21 @@
                     contain.style.backgroundSize='cover'
 
                 }
-                else if(response.weather[0].main=='Sunny')
+                else if(response.weather[0].main=='Clear')
                 {
                     contain.style.backgroundImage='url(https://img.freepik.com/premium-photo/sun-shines-through-clouds-sunny-day_865967-998243.jpg)'
                     contain.style.backgroundRepeat='no-repeat'
                     contain.style.backgroundSize='cover'
 
                 }
-                
+              
 
                 })
         }).catch((err)=>{console.log(err);})
+    }
+    function refresh()
+    {
+        location.reload()
     }
 </script>
 
