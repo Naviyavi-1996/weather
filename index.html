@@ -25,25 +25,27 @@
             </div>
         </div>
         
-            <div class="row w-100 d-flex flex-row">
-                <div class="col-md-2"></div>
-                <div id ="output1"class="col-md-3 mt-5">
-    
-                </div>
-                <div class="col-md-2 "></div>
-                <div id="output2"class="col-md-3 mt-5">
-    
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-            <div class="row w-100">
-                <div class="col-md-2"></div>
-                <div id="output3"class="col-md-8 d-flex justify-content-center align-items-center mt-1">
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-            
+            <div id="container">
+                <div class="row w-100 d-flex flex-row">
+                    <div class="col-md-2"></div>
+                    <div id ="output1"class="col-md-3 mt-5">
         
+                    </div>
+                    <div class="col-md-2 "></div>
+                    <div id="output2"class="col-md-3 mt-5">
+        
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row w-100">
+                    <div class="col-md-2"></div>
+                    <div id="output3"class="col-md-8 d-flex justify-content-center align-items-center mt-1">
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                
+            
+            </div>
     </div>
 
 </body>
@@ -60,11 +62,15 @@
                                        <p style="font-size:20px">${time}</p>`
                                        if(hour>=19)
                                        {
-                                        output2.innerHTML+=`<img src="https://static.vecteezy.com/system/resources/previews/006/660/486/non_2x/round-shaped-rock-formations-on-the-mountain-there-is-a-background-full-moon-red-or-orange-with-halo-bright-sky-in-a-starry-night-sky-3d-rendering-free-photo.jpg" alt="no image" height="40px" width="40px">`
+                                        const display=document.getElementsByTagName('body')[0]
+                                        display.style.color='white'
+                                        display.style.backgroundImage='url(https://static.vecteezy.com/system/resources/previews/006/660/486/non_2x/round-shaped-rock-formations-on-the-mountain-there-is-a-background-full-moon-red-or-orange-with-halo-bright-sky-in-a-starry-night-sky-3d-rendering-free-photo.jpg)'
                                        }
                                        else
                                        {
-                                         output2.innerHTML+=`<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/sun-and-clouds-macroworld.jpg" alt="no image" height="40px" width="40px">`
+                                         const display=document.getElementsByTagName('body')[0]
+                                        display.style.backgroundImage='url(https://thumbs.dreamstime.com/b/blue-sky-clouds-natural-background-92316401.jpg)'
+                                        display.style.backgroundSize='cover'
                                        }
                     output3.innerHTML= 
                  
@@ -86,6 +92,51 @@
                         </tr>
                     </tbody>
                 </table>`
+                const contain=document.getElementById('container')
+                if(response.weather[0].main=='Mist')
+                {
+                    
+                    contain.style.backgroundImage='url(https://cdn.pixabay.com/photo/2022/02/19/22/48/forest-7023487_640.jpg)'
+                    contain.style.backgroundRepeat='no-repeat'
+                    contain.style.backgroundSize='cover'
+
+                }
+                else if(response.weather[0].main=='Cloudy')
+                {
+                    contain.style.backgroundImage='url(https://st5.depositphotos.com/37603430/69421/i/450/depositphotos_694210848-stock-photo-strangely-shaped-white-clouds-blue.jpg)'
+                    contain.style.backgroundRepeat='no-repeat'
+                    contain.style.backgroundSize='cover'
+
+                }
+                else if(response.weather[0].main=='haze')
+                {
+                    contain.style.backgroundImage='url(https://www.shutterstock.com/image-photo/blue-abstract-spiral-clouds-sky-260nw-1643293840.jpg'
+                    contain.style.backgroundRepeat='no-repeat'
+                    contain.style.backgroundSize='cover'
+
+                }
+                else if(response.weather[0].main=='Snow')
+                {
+                    contain.style.backgroundImage='url(https://images.unsplash.com/photo-1418985991508-e47386d96a71?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNub3d8ZW58MHx8MHx8fDA%3D)'
+                    contain.style.backgroundRepeat='no-repeat'
+                    contain.style.backgroundSize='cover'
+
+                }
+                else if(response.weather[0].main=='Rainy')
+                {
+                    contain.style.backgroundImage='url(https://t4.ftcdn.net/jpg/01/63/96/63/360_F_163966311_qh3qSk57mw9oLPOklZigzX9zlB5DgdaM.jpg)'
+                    contain.style.backgroundRepeat='no-repeat'
+                    contain.style.backgroundSize='cover'
+
+                }
+                else if(response.weather[0].main=='Sunny')
+                {
+                    contain.style.backgroundImage='url(https://img.freepik.com/premium-photo/sun-shines-through-clouds-sunny-day_865967-998243.jpg)'
+                    contain.style.backgroundRepeat='no-repeat'
+                    contain.style.backgroundSize='cover'
+
+                }
+                
 
                 })
         }).catch((err)=>{console.log(err);})
