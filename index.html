@@ -56,24 +56,22 @@
     function check() {
         const time=new Date()
         const hour=time.getHours()
-        console.log(hour)
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=5fe36b192ffd1c36dffb6752bc1722b2`).then((result)=>{
         result.json().then((response)=>{console.log(response);
-                    output1.innerHTML= `<h3>${(response.main.temp-273.15).toFixed(2)}॰C<span style="font-size:20px"> ${response.weather[0].main}</span><img src="https://cdn-icons-png.freepik.com/512/9231/9231720.png" alt="no image" height="40px" width="40px"></h3>
+                    output1.innerHTML= `<h3>${(response.main.temp-273.15).toFixed(2)}॰C<span style="font-size:20px"> ${response.weather[0].main}</span></h3>
                     <p>feels like ${response.main.feels_like}</p>`
                     output2.innerHTML=`<h3>${response.name}<h3>
                                        <p style="font-size:20px">${time}</p>`
                                        if(hour>=19)
                                        {
-                                        const display=document.getElementsByTagName('body')[0]
-                                        display.style.color='white'
-                                        display.style.backgroundImage='url(https://static.vecteezy.com/system/resources/previews/006/660/486/non_2x/round-shaped-rock-formations-on-the-mountain-there-is-a-background-full-moon-red-or-orange-with-halo-bright-sky-in-a-starry-night-sky-3d-rendering-free-photo.jpg)'
+                                        output2.innerHTML+=`<img src="https://media.istockphoto.com/id/162515751/photo/moon-over-mountains.jpg?s=612x612&w=0&k=20&c=mKsWiAqN8lOGl6bdnDg9ssY25RSJJbSOk3g0MuDZNXw=" alt="no image" style="height:40px; width:40px">`
+                                       
                                        }
                                        else
                                        {
-                                         const display=document.getElementsByTagName('body')[0]
-                                        display.style.backgroundImage='url(https://thumbs.dreamstime.com/b/blue-sky-clouds-natural-background-92316401.jpg)'
-                                        display.style.backgroundSize='cover'
+                                         
+                                        output2.innerHTML+=`<img src="https://cdn-icons-png.freepik.com/512/9231/9231720.png" alt="no image" height="40px" width="40px">`
+                                        
                                        }
                     output3.innerHTML= 
                  
@@ -96,48 +94,48 @@
                     </tbody>
                 </table>`
                 clear.innerHTML=`<button class ="btn btn-success"onclick=refresh()>Clear</button>`
-                const contain=document.getElementById('container')
+                const display=document.getElementsByTagName('body')[0]
                 if(response.weather[0].main=='Mist')
                 {
                     
-                    contain.style.backgroundImage='url(https://cdn.pixabay.com/photo/2022/02/19/22/48/forest-7023487_640.jpg)'
-                    contain.style.backgroundRepeat='no-repeat'
-                    contain.style.backgroundSize='cover'
+                    display.style.backgroundImage='url(https://cdn.pixabay.com/photo/2022/02/19/22/48/forest-7023487_640.jpg)'
+                    display.style.backgroundRepeat='no-repeat'
+                    display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Clouds')
                 {
-                    contain.style.backgroundImage='url(https://st5.depositphotos.com/37603430/69421/i/450/depositphotos_694210848-stock-photo-strangely-shaped-white-clouds-blue.jpg)'
-                    contain.style.backgroundRepeat='no-repeat'
-                    contain.style.backgroundSize='cover'
+                    display.style.backgroundImage='url(https://st5.depositphotos.com/37603430/69421/i/450/depositphotos_694210848-stock-photo-strangely-shaped-white-clouds-blue.jpg)'
+                    display.style.backgroundRepeat='no-repeat'
+                    display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='haze')
                 {
-                    contain.style.backgroundImage='url(https://www.shutterstock.com/image-photo/blue-abstract-spiral-clouds-sky-260nw-1643293840.jpg'
-                    contain.style.backgroundRepeat='no-repeat'
-                    contain.style.backgroundSize='cover'
+                    display.style.backgroundImage='url(https://www.shutterstock.com/image-photo/blue-abstract-spiral-clouds-sky-260nw-1643293840.jpg'
+                    display.style.backgroundRepeat='no-repeat'
+                    display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Snow')
                 {
-                    contain.style.backgroundImage='url(https://images.unsplash.com/photo-1418985991508-e47386d96a71?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNub3d8ZW58MHx8MHx8fDA%3D)'
-                    contain.style.backgroundRepeat='no-repeat'
-                    contain.style.backgroundSize='cover'
+                    display.style.backgroundImage='url(https://images.unsplash.com/photo-1418985991508-e47386d96a71?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNub3d8ZW58MHx8MHx8fDA%3D)'
+                    display.style.backgroundRepeat='no-repeat'
+                    display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Rainy')
                 {
-                    contain.style.backgroundImage='url(https://t4.ftcdn.net/jpg/01/63/96/63/360_F_163966311_qh3qSk57mw9oLPOklZigzX9zlB5DgdaM.jpg)'
-                    contain.style.backgroundRepeat='no-repeat'
-                    contain.style.backgroundSize='cover'
+                   display.style.backgroundImage='url(https://t4.ftcdn.net/jpg/01/63/96/63/360_F_163966311_qh3qSk57mw9oLPOklZigzX9zlB5DgdaM.jpg)'
+                   display.style.backgroundRepeat='no-repeat'
+                   display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Clear')
                 {
-                    contain.style.backgroundImage='url(https://img.freepik.com/premium-photo/sun-shines-through-clouds-sunny-day_865967-998243.jpg)'
-                    contain.style.backgroundRepeat='no-repeat'
-                    contain.style.backgroundSize='cover'
+                    display.style.backgroundImage='url(https://img.freepik.com/premium-photo/sun-shines-through-clouds-sunny-day_865967-998243.jpg)'
+                    display.style.backgroundRepeat='no-repeat'
+                    display.style.backgroundSize='cover'
 
                 }
               
