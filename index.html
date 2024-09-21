@@ -43,7 +43,9 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div>
-                
+                <div id="clear" class="d-flex justify-content-center align-items-center ">
+
+                </div>
             
             </div>
            
@@ -92,8 +94,8 @@
                             <td>${response.main.pressure}</td>
                         </tr>
                     </tbody>
-                </table>
-                <button class ="btn btn-outline-success ms-3"onclick=refresh()>Clear</button>`
+                </table>`
+                clear.innerHTML=`<button class ="btn btn-success"onclick=refresh()>Clear</button>`
                 const contain=document.getElementById('container')
                 if(response.weather[0].main=='Mist')
                 {
