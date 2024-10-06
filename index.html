@@ -20,7 +20,7 @@
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-5">
                 <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;text-align: center;">
                     Weather Information</h1>
-                <input id="input" type="text" class="form-control bg-transparent  ms-2 my-2 my-md-0 w-75 w-md-25" placeholder="city name">
+                <input id="input" type="text" class="form-control  ms-2 my-2 my-md-0 w-75 w-md-25" placeholder="city name">
                 <button class="btn btn-outline-dark ms-2" onclick=check()>Check</button>
             </div>
         </div>
@@ -100,42 +100,42 @@
                 if(response.weather[0].main=='Mist')
                 {
                     
-                    display.style.backgroundImage='url(https://cdn.pixabay.com/photo/2022/02/19/22/48/forest-7023487_640.jpg)'
+                    display.style.backgroundImage='url(https://33.media.tumblr.com/b2464026ed77e906cc4b99153e5c5f38/tumblr_n4ekwpBuNf1r70t47o1_500.gif)'
                     display.style.backgroundRepeat='no-repeat'
                     display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Clouds')
                 {
-                    display.style.backgroundImage='url(https://st5.depositphotos.com/37603430/69421/i/450/depositphotos_694210848-stock-photo-strangely-shaped-white-clouds-blue.jpg)'
+                    display.style.backgroundImage='url(https://i.pinimg.com/originals/37/8e/ab/378eabe3f90259f97d680449dee494cc.gif)'
                     display.style.backgroundRepeat='no-repeat'
                     display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Haze')
                 {
-                    display.style.backgroundImage='url(https://www.shutterstock.com/image-photo/blue-abstract-spiral-clouds-sky-260nw-1643293840.jpg'
+                    display.style.backgroundImage='url(https://i.gifer.com/origin/da/da094cc1c17cd92c07598bc54e403318.gif)'
                     display.style.backgroundRepeat='no-repeat'
                     display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Snow')
                 {
-                    display.style.backgroundImage='url(https://images.unsplash.com/photo-1418985991508-e47386d96a71?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNub3d8ZW58MHx8MHx8fDA%3D)'
+                    display.style.backgroundImage='url(https://i.pinimg.com/originals/e4/a6/b9/e4a6b92746b595562938d01b6a5e4445.gif)'
                     display.style.backgroundRepeat='no-repeat'
                     display.style.backgroundSize='cover'
 
                 }
-                else if(response.weather[0].main=='Rainy')
+                else if(response.weather[0].main=='Rain')
                 {
-                   display.style.backgroundImage='url(https://t4.ftcdn.net/jpg/01/63/96/63/360_F_163966311_qh3qSk57mw9oLPOklZigzX9zlB5DgdaM.jpg)'
+                   display.style.backgroundImage='url(https://i.pinimg.com/originals/a6/35/be/a635bef2597b26d2529da2a1bf5e55ab.gif)'
                    display.style.backgroundRepeat='no-repeat'
                    display.style.backgroundSize='cover'
 
                 }
                 else if(response.weather[0].main=='Clear')
                 {
-                    display.style.backgroundImage='url(https://img.freepik.com/premium-photo/sun-shines-through-clouds-sunny-day_865967-998243.jpg)'
+                    display.style.backgroundImage='url(https://i.gifer.com/Lx0q.gif)'
                     display.style.backgroundRepeat='no-repeat'
                     display.style.backgroundSize='cover'
 
@@ -143,7 +143,7 @@
               
 
                 })
-        }).catch((err)=>{console.log(err);})
+        }).catch((err)=>{Console.log("Error")})
     }
     else{
         alert("please enter a city name");
